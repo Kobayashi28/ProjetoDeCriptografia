@@ -1,0 +1,65 @@
+create database criptografia;
+use criptografia;
+
+create table userTable(
+id int primary key auto_increment,
+username text,
+passwd text,
+profilePic text,
+registerDate timestamp default now()
+);
+
+create table messageType(
+id int primary key auto_increment,
+ds_type text
+);
+
+create table chatChannel(
+id int primary key auto_increment,
+channelName text,
+secretKey text,
+channelPicture text
+);
+
+create table messagesChat(
+id int primary key auto_increment,
+messageContent text,
+sentTime timestamp default current_timestamp,
+id_channel int,
+id_user int,
+id_type int,
+foreign key FK_userMessage (id_user) references userTable(id),
+foreign key FK_messageType (id_type) references messageType(id),
+foreign key FK_messageChannel (id_channel) references chatChannel(id)
+);
+
+create table chatChannelUser(
+id int primary key auto_increment,
+id_user int,
+id_channel int,
+foreign key FK_associativeUser (id_user) references userTable (id),
+foreign key FK_associativeChannel (id_channel) references chatChannel (id)
+);
+
+select id from userTable where username = 'joao' && passwd = '1223';
+use criptografia;
+select mc.messageContent, mc.sentTime, ut.username from messagesChat as mc inner join userTable ut on ut.id = mc.id_user where mc.id_channel = 2 order by mc.sentTime;
+
+select * from chatChannel inner join chatChannelUser on chatChannelUser.id_channel = chatChannel.id  inner join userTable on chatChannelUser.id_user = userTable.id where chatChannelUser.id_channel = 3;
+select cc.id, cc.channelName, cc.secretKey, cc.channelPicture from chatChannel as cc inner join chatChannelUser as ccu on ccu.id_channel = cc.id where ccu.id_user = 3;
+select * from chatChannel inner join chatChannelUser on chatChannelUser.id_channel = chatChannel.id where chatChannelUser.id_channel = 3;
+select * from chatChannel;
+select cc.id, cc.channelName, cc.secretKey, cc.channelPicture from chatChannel as cc inner join chatChannelUser as ccu on ccu.id_channel = cc.id where ccu.id_user = '1';
+
+insert into  userTable(username, passwd, profilePic) values ('joao', '123', '/resources/joao.jpg'), ('paulo', '123', '/resources/paulo.jpg'), ('maria', '123', '/resources/maria.jpg');
+
+insert into messageType(ds_type) values ('text');
+
+insert into chatChannel(channelName, secretKey, channelPicture) values ('canal 1','joaopaulo', '/dsadsa.jpg'),('canal 2','joaomaria','/dushadsa.png'), ('canal 3','joaopaulomaria', '/dujishbadsa.hpg');
+
+insert into chatChannelUser(id_user, id_channel) values (1, 1), (1, 2), (1, 3), (2,1), (2,3),(3,3),(3,2);
+/*
+insert into messagesChat(messageContent, id_channel, id_user, id_type) values ('oi', 1, 1, 1), ('oi de volta', 1, 2, 1);
+
+select * from messagesChat where id_channel = 1;*/
+

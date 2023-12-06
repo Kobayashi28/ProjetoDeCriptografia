@@ -1,0 +1,544 @@
+.lp-container{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    background-color: gray;
+}
+
+.lp-menu{
+    background-color: var(--secondary-color);
+    display:flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    min-width: 25vw;
+    max-width: 30vw;
+    flex-shrink: 0;
+}
+
+.lp-menuHeader{
+    background-color: var(--primary-color);
+    display:flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+
+.lp-menuItens{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:1rem;
+    padding:0.3rem 1rem 0.3rem 0.5rem;
+    font-size:1.6em;
+    cursor:pointer;
+    color:var(--text-color);
+    min-height: 10vh;
+}
+
+.lp-menuItens li:nth-child(1){
+    margin-right:auto
+}
+
+.lp-menuItens img{
+    max-width: 7vw;
+    max-height: 7vh;
+    border-radius:100%;
+}
+.lp-menuSubHeader{
+    background-color: var(--secondary-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5rem;
+    gap:0.5rem;
+}
+
+.lp-menuSearchBox{
+    background-color: var(--primary-color);
+    border:none;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    outline:none;
+    color:var(--text-color);
+    flex-grow: 1;
+    border-radius:5px
+}
+.lp-menuSearchFilter img{
+    max-width:4vw;
+    max-height:4vh;
+    cursor:pointer
+}
+
+.lp-contactList{
+    display:flex;
+    flex-direction: column;
+
+}
+.lp-contactItem{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:0.7rem;
+    padding:0 0.5rem 0 0.5rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.lp-contactProfilePic{
+    width:4rem;
+    height:4rem;
+    border-radius:100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.lp-contactMessageWrapper{
+    display:flex;
+    flex-direction: column;
+    gap:0.3rem;
+    border-bottom:1px solid var(--primary-color);
+    padding:1rem 0 1rem 0;
+    flex-grow:1;
+}
+.lp-CMW-row{
+    display:flex;
+    flex-grow:1;
+    align-items: center;
+    gap:1rem;
+}
+.lp-contactName{
+    color:white;
+    font-weight: lighter;
+    font-size:1.1em;
+}
+.lp-contactLastMessage{
+    font-weight: lighter;
+    color:var(--text-color);
+    font-size:0.8em;
+}
+.lp-contactLastMessageDate{
+    font-weight: lighter;
+    color:var(--text-color);
+    font-size:0.8em;
+    margin-left:auto;
+    padding-right:1rem;
+}
+
+
+/* chatbox */
+
+
+
+.lp-chatbox{
+    display:flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.lp-chatboxHeader{
+    background-color: var(--primary-color);
+    min-height: 10vh;
+    display:flex;
+    align-items: center;
+    gap:1rem;
+    padding-left:1rem
+}
+.lp-chatboxImage{
+    width:3rem;
+    height:3rem;
+    border-radius:100%;
+    background-image:url('http://192.168.1.110:4001/uploads/profilePics/user.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+.lp-chatboxInfo{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:0.2rem
+}
+.lp-chatboxTitle{
+    font-weight: lighter;
+    color:white;
+    font-size:1.1em;
+}
+.lp-chatboxMemberList{
+    color:rgba(255,255,255,0.5);
+    font-weight: lighter;
+    font-size:0.8em
+}
+
+
+.lp-chatboxFooter{
+    background-color: var(--fourth-color);
+    display:flex;
+    gap:1rem;
+    padding:1rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#cbFile{
+    display: none;
+}
+.cbFileLabel{
+    cursor:pointer;
+    font-size:3rem;
+}
+
+.lp-chatboxWriteMessage{
+    background-color:var(--primary-color);
+    outline:none;
+    border:none;
+    border-radius:15px;
+    flex-grow:1;
+    font-size:1em;
+    justify-content: center;
+    white-space: pre-wrap;
+    min-height:5vh;
+    padding:1rem;
+    color:var(--text-color)
+}
+.lp-chatboxSubmitButton {
+    padding:0.5rem;
+    cursor: pointer;
+}
+.lp-chatboxSubmitButton img{
+    max-width: 6vw;
+    max-height: 6vh;
+}
+.lp-chatboxContent{
+    display:flex;
+    flex-grow:1;
+    background-color:var(--tertiary-color);
+    flex-direction: column;
+    gap:1rem;
+    overflow-y: scroll;
+}
+.lp-messageContainer{
+    display:flex;
+    gap:1rem;
+    max-width: 35vw;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin:1rem;
+}
+.lp-message{
+    word-break: break-all;
+    max-width: 35vw;
+    margin-left:2rem;
+    background-color: #005c4b;
+
+    padding:0.5rem 1rem 0.5rem 1rem;
+    border-radius:5px;
+    justify-content: center;
+    align-items: center;
+    color:var(--text-color);
+    font-size:1em;
+}
+.lp-systemMessage{
+    align-self: center;
+    color:rgba(255,255,255,0.3);
+    background-color: rgba(0,0,0,0.15);
+    padding:0.2rem 1rem 0.4rem 1rem;
+    border-radius:5px
+}
+.lp-messageHeader{
+    color:white;
+    padding-bottom:0.5rem;
+    font-size:1.2em
+}
+.lp-messageTimeLabel{
+    color:rgba(255,255,255,0.3);
+    font-size:0.8em;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+
+
+.lp-newChannel{
+    display:flex;
+    position:absolute;
+    min-width:25vw;
+    max-width: 30vw;
+    max-height:100%;
+    min-height: 100%;
+    background-color: var(--tertiary-color);
+    flex-direction: column;
+    border-right:1px solid rgba(255,255,255,0.2);
+    overflow-y: auto;
+    left:-30vw;
+    transition:0.5s;
+}
+
+.lp-ncSelectUsers{
+    display:none;
+    flex-direction: column;
+}
+
+.lp-ncHeader{
+    display:flex;
+    gap:1rem;
+    background-color: var(--primary-color);
+    min-height:15vh;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom:3vh;
+}
+
+
+.lp-ncBack img{
+    min-width: 3vw;
+    min-height: 3vh;
+    rotate: 180deg;
+    cursor: pointer;
+
+}
+.lp-ncTitle{
+    font-size:1.5em;
+    padding-bottom:0.6vh;
+    color:rgba(255,255,255,0.9);
+    font-weight:lighter
+}
+
+.lp-ncUserList{
+    display:flex;
+    flex-direction: column;
+}
+.lp-ncUserList li{
+    flex-shrink: 0;
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+    gap:1rem;
+    padding-left:1vw;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.lp-ncUserPic img{
+    max-width: 8vw;
+    max-height: 8vh;
+    border-radius:100%;
+    margin:0.5rem 0 0.5rem 1rem;
+}
+
+.lp-ncUsername{
+    font-size:1.3em;
+    font-weight: lighter;
+    color:var(--text-color)
+}
+.lp-ncFooter{
+    display:flex;
+    justify-content: center ;
+    background-color: var(--primary-color);
+    padding:1rem;
+    color:rgba(255,255,255,0.2);
+    margin-top:auto;
+}
+.lp-selected{
+    background-color: rgba(156,164,169,0.1);
+}
+
+.lp-ncInfoWrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:2rem;
+    gap:2rem;
+}
+
+.lp-ncNameInput{
+    background-color: var(--tertiary-color);
+    border:none;
+    border-bottom:2px solid var(--primary-color);
+    padding:0.5rem 1rem 0.5rem 1rem;
+    font-size:1.3em;
+    color:var(--text-color);
+    outline:none;
+}
+
+.lp-ncImgInput{
+    width:12rem;
+    height:12rem;
+    border-radius:100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.lp-ncChannelInfo{
+    display:none;
+    flex-direction: column;
+}
+
+.lp-channelInfo{
+    width:30vw;
+    height:100vh;
+    position:absolute;
+    background-color: var(--secondary-color);
+    left:120vw;
+    transition: 0.4s;
+    border-left:1px solid rgba(255,255,255,0.2);
+    display:flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    flex-shrink: 0;
+}
+.lp-ciHeader{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:2rem;
+    padding:1rem 2rem 1rem;
+    background-color: var(--primary-color);
+    height: 10vh;
+    overflow-y: hidden;
+    flex-shrink: 0;
+}
+.lp-ciHeaderExit{
+    font-size:2em;
+    font-weight: bold;
+    color:rgba(255,255,255,0.4);
+    cursor:pointer
+}
+.lp-ciHeaderTitle{
+    font-size:1.2em;
+    font-weight: lighter;
+    color:var(--text-color);
+}
+.lp-ciContentWrapper{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    padding-bottom:2rem
+}
+
+.lp-ciIdentity{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tertiary-color);
+    padding-top:2rem;
+    gap:1rem;
+    padding-bottom:1rem;
+    flex-shrink: 0;
+}
+
+.lp-ciImage{
+    background-image: url('http://192.168.1.110:4001/uploads/profilePics/user.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    border-radius:100%;
+    width:12rem;
+    height:12rem;
+}
+
+.lp-ciTitle{
+    color:rgba(255,255,255,0.9);
+    font-weight: lighter;
+}
+.lp-ciUserCount{
+    color:var(--text-color);
+    font-weight: lighter;
+}
+
+
+.lp-ciUserList{
+    background-color: var(--tertiary-color);
+    display:flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.lp-ciUser, .lp-ciAddUser{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1rem;
+    padding:1rem 0 1rem 2rem;
+    transition: 0.2s;
+
+}
+.lp-ciAddUser{
+    border-bottom:2px solid var(--secondary-color);
+    display:flex;
+    justify-content: space-between;
+    padding:1rem 2rem 1rem 2rem;
+}
+.lp-ciUser:hover{
+    background-color: rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+.lp-ciULimg, .lp-ciAddUserImg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    width:3rem;
+    height:3rem;
+    border-radius:100%;  
+}
+.lp-ciAddUserImg{
+    transform:rotate(-15deg);
+    cursor:pointer;
+    width:2.5rem;
+    height:2.5rem;
+}
+
+.lp-ciULimg{
+    background-image: url('http://192.168.1.110:4001/uploads/profilePics/user.jpeg');
+}
+
+.lp-ciNewUserInput{
+    outline:none;
+    border:none;
+    background-color: var(--primary-color);
+    padding:0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius:5px;
+    color:rgba(255,255,255,0.9);
+    flex-grow:1;
+}
+
+.lp-ciULText{
+    font-size:1.2em;
+    color:rgba(255,255,255,0.9);
+    font-weight: lighter;
+}
+.lp-ciFooter{
+    display:flex;
+    background-color: var(--tertiary-color);
+    flex-shrink: 0;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.lp-ciFooter:hover{
+    background-color: rgba(255, 0, 0, 0.6);
+    transition: 0.2s;
+}
+.lp-ciFooterLeave{
+    display:flex;
+    padding:1rem 0 1rem 2rem;
+    gap:1.5rem;
+    align-items: center;
+}
+
+.lp-ciLeaveIcon{
+    width:2rem;
+    height:2rem;
+}
+.lp-ciLeaveText{
+    font-size:1.2em;
+    color:black
+}
+.hiddenButton{
+    display:none;
+}

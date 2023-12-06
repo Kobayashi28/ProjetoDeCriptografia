@@ -1,0 +1,103 @@
+.auth-container{
+    display:flex;
+    width:100vw;
+    height:100vh;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+}
+.auth-container h1{
+    color:black
+}
+.auth-container h4{
+    cursor:pointer;
+    font-size:1em;
+    transition: 0.2s;    
+}
+.auth-container h4:hover{
+    transition: 0.2s;  
+    color:rgba(255,255,255,0.9)
+}
+.auth-login{
+    display:flex;
+    flex-direction: column;
+    z-index: 2;
+    background-color: var(--primary-color);
+    gap:3rem;
+    min-width:30vw;
+    min-height:70vh;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-register{
+    background-color: var(--primary-color);
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    z-index: 1;
+    min-width:30vw;
+    /* min-height:90vh; */
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+    height:0;
+    min-height:0;
+}
+
+.auth-lockIcon, .auth-userIcon{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    width:1.5rem;
+    height:1.5rem;
+}
+.auth-container input{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    padding:0.5rem;
+    flex-grow: 1;
+}
+.auth-container input::placeholder{
+    color:rgba(0,0,0,0.8);
+}
+
+.auth-container button{
+    min-width:20vw;
+    min-height:7vh;
+    flex-grow:0;
+}
+
+.auth-lockIcon{
+    background-image: url('../../assets/lock.svg');
+}
+
+.auth-userIcon{
+    background-image: url('../../assets/user.png');
+}
+.auth-loginWrapper{
+    display:flex;
+    border-bottom:2px solid black;
+    min-width:20vw;
+    gap:0.5rem;
+}
+
+.auth-container button{
+    background-color: var(--secondary-color);
+    border:none;
+    cursor:pointer;
+    border-radius:10px;
+    font-size:1.2em;
+    letter-spacing: 0.1rem;
+}
+.auth-imageUploadLabel{
+    background-image:url('../../assets/user.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    width:8rem;
+    height:8rem;
+    border-radius:100%;
+}

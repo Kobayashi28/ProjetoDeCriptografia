@@ -1,0 +1,19 @@
+
+:root{
+    --primary-color:#2a3942;
+    --secondary-color:#202c33;
+    --tertiary-color:#1a2227;
+    --fourth-color:#202c33;
+    --text-color:#d1d7db;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    overflow-x: hidden;
+    font-family: 'arial';
+}
+textarea{
+    resize:none
+}
